@@ -1,0 +1,23 @@
+AC1
+
+1- Síntese de Imagens 
+Objetivo: Criar imagens do zero, usando modelos matemáticos.
+Exemplo: jogos e animações em 3D.
+
+2- Processamento de Imagens
+Objetivo: Alterar ou melhorar uma imagem real.
+Exemplo: tirar ruído ou destacar bordas em fotos.
+
+3- Visão Computacional
+Objetivo: Fazer o computador entender o que está numa imagem.
+Exemplo: Reconhecer rostos ou objetos.
+
+4- Visualização Computacional+
+Objetivo: Mostrar dados em forma de imagem para facilitar a análise.
+Exemplo: gráficos 3D, mapas de calor.
+
+Resumindo:
+Síntese = criar imagem
+Processamento = modificar imagem real
+Visão Computacional = entender imagem
+Visualização = mostrar dados em forma visual
