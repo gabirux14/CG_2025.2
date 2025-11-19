@@ -1,0 +1,68 @@
+1. Como o olho percebe as cores e função dos cones
+
+O olho percebe as cores porque a luz atinge a retina, onde existem cones, células que respondem a comprimentos de onda diferentes.
+Há 3 tipos de cones:
+
+S → azul
+
+M → verde
+
+L → vermelho
+
+O cérebro combina esses sinais e forma as cores.
+
+2. Diferença entre RGB e CMYK + exemplo
+
+RGB
+
+Modelo aditivo (usa luz).
+
+Usado em telas (monitor, celular, TV).
+
+CMYK
+
+Modelo subtrativo (usa tinta).
+
+Usado em impressão (revistas, banners, gráfica).
+
+3. Cor aditiva e subtrativa
+
+Aditiva: soma luz (RGB). Quanto mais luz, mais claro. Branco = somar R+G+B.
+Ex.: telas.
+
+Subtrativa: soma tinta (CMYK). Quanto mais tinta, mais escuro.
+Ex.: impressoras.
+
+6.2. Aplicação Prática — Sensoriamento Remoto
+Dois espaços de cores usados em satélites
+
+True Color (RGB) – imagem parecida com o que o olho vê.
+
+False Color (NIR, Red, Green) – destaca vegetação, água e solos usando infravermelho.
+
+Exemplo em Python 
+import matplotlib.pyplot as plt
+from skimage import io
+import numpy as np
+
+img = io.imread("https://storage.googleapis.com/gcp-community/tutorials/sentinel-rgb.png")
+
+plt.imshow(img)
+plt.title("True Color (RGB)")
+plt.axis("off")
+plt.show()
+
+
+nir = np.mean(img, axis=2)
+nir_norm = (nir - nir.min()) / (nir.max() - nir.min())
+
+false_color = np.dstack([
+    nir_norm,
+    img[:,:,0] / 255,
+    img[:,:,1] / 255
+])
+
+plt.imshow(false_color)
+plt.title("False Color (NIR, R, G) - Simulado")
+plt.axis("off")
+plt.show()
